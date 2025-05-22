@@ -30,7 +30,7 @@ def get_project(project_name):
         return jsonify({"error": "Project not found"}), 404
 
 
-# Route to add a new project
+# Route to add a new projectt
 @app.route("/project", methods=["POST"])
 def add_project():
     data = request.get_json()
