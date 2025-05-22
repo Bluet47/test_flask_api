@@ -32,6 +32,9 @@ jobs:
         with:
           terraform_version: 1.5.7
 
+      - name: Verify bucket name being passed
+        run: echo "Using bucket: ${{ env.tf_bucket_name }}"
+
       - name: Store SA key locally
         run: echo "${{ secrets.GCP_TF_SA_CREDS_BASE64 }}" | base64 -d > credentials.json
 
