@@ -27,6 +27,11 @@ jobs:
         with:
           credentials_json: ${{ secrets.GCP_TF_SA_CREDS_BASE64 }}
 
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.7
+
       - name: Store SA key locally
         run: echo "${{ secrets.GCP_TF_SA_CREDS_BASE64 }}" | base64 -d > credentials.json
 
